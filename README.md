@@ -1,3 +1,2 @@
 # GaleriaNTR
-la stamateria
-prueba a ver si anda esta kkkkkkkkkk
+Léxico técnico de las Artes Plásticas Irene Crespi y Jorge Ferrario, editorial Eudeba 
