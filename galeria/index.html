@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f0e8">
+    <meta name="description" content="Una muestra colectiva de arte joven: 130 obras, 130 maneras de mirar.">
+    <title>Otra forma de mirar — muestra colectiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Otra forma de mirar, inicio">
+        <span class="wordmark-symbol" aria-hidden="true">o.</span>
+        <span>OTRA FORMA<br>DE MIRAR</span>
+      </a>
+      <nav class="topnav" aria-label="Navegación principal">
+        <a class="nav-link nav-link-active" href="#coleccion">La colección</a>
+        <a class="nav-link" href="#acerca">El proyecto</a>
+      </nav>
+      <a class="topbar-cta" href="#coleccion">EXPLORAR OBRAS <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> UNA MUESTRA COLECTIVA · EDICIÓN 01</p>
+          <h1 id="hero-title">El mundo,<br>visto <em>a nuestra</em><br><span class="last-line">manera<span class="hero-period">.</span></span></h1>
+          <div class="hero-bottom">
+            <p class="hero-description">Siete artistas, diecinueve consignas y muchas formas distintas de resolverlas. Mirá cómo cada mirada transforma una misma idea.</p>
+            <a class="round-link" href="#coleccion" aria-label="Bajar a la colección">↓</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Collage de obras de muestra">
+          <div class="hero-art-frame hero-frame-main"><img id="hero-main-art" alt="Obra abstracta de muestra"></div>
+          <div class="hero-art-frame hero-frame-secondary"><img id="hero-secondary-art" alt="Obra abstracta de muestra"></div>
+          <div class="hero-art-frame hero-frame-tertiary"><img id="hero-tertiary-art" alt="Obra abstracta de muestra"></div>
+          <span class="hero-sticker" aria-hidden="true">HECHO<br>POR<br>NOSOTROS <span>✳</span></span>
+          <p class="hero-caption">01 — UNA MIRADA, MIL MUNDOS</p>
+          <span class="hero-index" aria-hidden="true">2025—26</span>
+        </div>
+        <div class="hero-footnote"><span>ARTE JOVEN, SIN FILTROS</span><span>DESLIZÁ Y DESCUBRÍ <span aria-hidden="true">↓</span></span></div>
+      </section>
+
+      <section class="collection" id="coleccion" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> EL ARCHIVO COLECTIVO</p>
+            <h2 id="collection-title">Todas las <em>miradas.</em></h2>
+          </div>
+          <p class="section-note">19 consignas compartidas.<br>Hasta 7 miradas por consigna.</p>
+        </div>
+
+        <div class="collection-toolbar">
+          <div class="filter-chips" role="group" aria-label="Filtrar por artista">
+            <button class="filter-chip is-active" data-artist="Todos" type="button" aria-pressed="true">Todos <span>130</span></button>
+            <button class="filter-chip" data-artist="Artista 01" type="button" aria-pressed="false">Artista 01</button>
+            <button class="filter-chip" data-artist="Artista 02" type="button" aria-pressed="false">Artista 02</button>
+            <button class="filter-chip" data-artist="Artista 03" type="button" aria-pressed="false">Artista 03</button>
+            <button class="filter-chip" data-artist="Artista 04" type="button" aria-pressed="false">Artista 04</button>
+            <button class="filter-chip" data-artist="Artista 05" type="button" aria-pressed="false">Artista 05</button>
+            <button class="filter-chip" data-artist="Artista 06" type="button" aria-pressed="false">Artista 06</button>
+            <button class="filter-chip" data-artist="Artista 07" type="button" aria-pressed="false">Artista 07</button>
+          </div>
+          <div class="toolbar-actions">
+            <label class="search-box">
+              <span class="sr-only">Buscar obras o artistas</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.6"></circle><path d="m13 13 4 4"></path></svg>
+              <input id="search-input" type="search" placeholder="Buscar obra o artista..." autocomplete="off">
+            </label>
+            <button class="favorites-toggle" id="favorites-toggle" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> Favoritas <span class="favorite-count" id="favorite-count">0</span></button>
+            <label class="sort-select-wrap">
+              <span class="sr-only">Ordenar obras</span>
+              <select id="sort-select" aria-label="Ordenar obras">
+                <option value="curated">Orden: consignas</option>
+                <option value="artist">Artistas: A–Z</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="results-line" aria-live="polite">
+          <p id="results-count">130 obras para descubrir</p>
+          <span>TOCÁ UNA OBRA PARA VERLA DE CERCA <span aria-hidden="true">↗</span></span>
+        </div>
+
+        <div class="prompt-groups" id="prompt-groups" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">◌</span>
+          <h3>Por acá todavía no hay obras.</h3>
+          <p>Probá con otra búsqueda o cambiá los filtros.</p>
+          <button type="button" id="clear-filters">Ver toda la colección</button>
+        </div>
+        <div class="collection-end"><span>— FIN DEL RECORRIDO —</span><span>19 CONSIGNAS · 7 ARTISTAS ✳</span></div>
+      </section>
+
+      <section class="about" id="acerca">
+        <div class="about-mark" aria-hidden="true">o.</div>
+        <div class="about-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> UN PROYECTO HECHO ENTRE TODOS</p>
+          <h2>Un montón de voces.<br><em>Un mismo lugar.</em></h2>
+          <p>Siete artistas respondieron a las mismas consignas. Cada sección reúne sus trabajos para que puedas descubrir, lado a lado, las distintas formas de interpretar una misma idea.</p>
+        </div>
+        <div class="about-side"><span>130</span><p>OBRAS<br>PARA EXPLORAR</p><span class="about-star" aria-hidden="true">✳</span></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="wordmark footer-wordmark" href="#"><span class="wordmark-symbol" aria-hidden="true">o.</span><span>OTRA FORMA<br>DE MIRAR</span></a>
+      <span>UNA GALERÍA DE NUESTRA COMUNIDAD</span>
+      <a href="#coleccion">VOLVER ARRIBA ↑</a>
+    </footer>
+
+    <dialog class="art-dialog" id="art-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar">×</button>
+      <button class="dialog-arrow dialog-prev" id="dialog-prev" type="button" aria-label="Obra anterior">←</button>
+      <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+      <div class="dialog-info">
+        <p class="eyebrow" id="dialog-category"></p>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-artist" id="dialog-artist"></p>
+        <p class="dialog-description" id="dialog-description"></p>
+        <button class="dialog-favorite" id="dialog-favorite" type="button"></button>
+        <span class="dialog-position" id="dialog-position"></span>
+      </div>
+      <button class="dialog-arrow dialog-next" id="dialog-next" type="button" aria-label="Obra siguiente">→</button>
+    </dialog>
+  </body>
+</html>
