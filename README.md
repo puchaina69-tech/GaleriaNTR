@@ -1,14 +1,4 @@
-# GaleriaNTR
-
-Repositorio dedicado a la organización y exhibición de trabajos de artes plásticas.
-
-## Contenido
-
-- [`galeria/`](./galeria/): sitio web responsive para explorar la colección.
-- [`Dibujos/`](./Dibujos/): archivo de trabajos organizados por artista.
-- [`galeria/README.md`](./galeria/README.md): instrucciones específicas de la galería.
-
-## Léxico técnico
+# Léxico técnico
 
 Glosario basado en *Léxico técnico de las Artes Plásticas*, de Irene Crespi y Jorge Ferrario, editorial Eudeba.
 
